@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 .julius-sans-one-regular {
     font-family: "Julius Sans One", sans-serif;
     font-weight: 400;
