@@ -153,6 +153,7 @@ body {
     font-size: x-large;
     margin: 0; /* Elimina el margen por defecto del párrafo */
     color: #333;
+    padding: 10%;
 }
 .animation-section {
     opacity: 0;
