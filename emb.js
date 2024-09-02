@@ -1,19 +1,35 @@
-const burger = document.querySelector('.burger');
-const nav = document.querySelector('.nav-links');
-const navLinks = document.querySelectorAll('.nav-links li');
+document.addEventListener('DOMContentLoaded', function () {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
 
-burger.addEventListener('click', () => {
-    nav.classList.toggle('nav-active');
+    burger.addEventListener('click', () => {
+        // Alternar la clase para abrir/cerrar el menú
+        nav.classList.toggle('nav-active');
 
-    navLinks.forEach((link, index) => {
-        if (link.style.animation) {
-            link.style.animation = '';
-        } else {
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-        }
+        // Añadir animación a los enlaces
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+
+        // Alternar el ícono de la hamburguesa
+        burger.classList.toggle('toggle');
     });
 
-    burger.classList.toggle('toggle');
+    // Cerrar el menú al hacer clic en un enlace del menú
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav-active');
+            burger.classList.remove('toggle');
+            navLinks.forEach(link => {
+                link.style.animation = '';
+            });
+        });
+    });
 });
 document.addEventListener('DOMContentLoaded', function () {
     const animatedElement = document.getElementById('anim-section');
