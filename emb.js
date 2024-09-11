@@ -32,25 +32,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 document.addEventListener('DOMContentLoaded', function () {
-    const animatedElement = document.getElementById('anim-section');
+    const animatedElements = document.getElementsByClassName('circle');
 
     function checkVisibility() {
-        const rect = animatedElement.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        const margin = 100; // Ajusta este valor según sea necesario
+        for (let animatedElement of animatedElements){
+            const rect = animatedElement.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            const margin = 100; // Ajusta este valor según sea necesario
 
-        // Verifica si el elemento está dentro de la ventana de visualización con un margen adicional
-        if (rect.top < windowHeight - margin && rect.bottom > margin) {
-            if (!animatedElement.classList.contains('animate__rollIn') && !animatedElement.classList.contains('text visible')) {
-                console.log('Elemento visible. Añadiendo clase "visible".');
-                animatedElement.classList.add('animate__rollIn');
+            // Verifica si el elemento está dentro de la ventana de visualización con un margen adicional
+            if (rect.top < windowHeight - margin && rect.bottom > margin) {
+                if (!animatedElement.classList.contains('animate__rollIn') && !animatedElement.classList.contains('text visible')) {
+                    console.log('Elemento visible. Añadiendo clase "visible".');
+                    animatedElement.classList.add('animate__rollIn');
+                }
             }
-        }
-        else {
-            if (animatedElement.classList.contains('animate__rollIn')) {
-                console.log('Elemento fuera de vista. Eliminando clase "visible".');
-                animatedElement.classList.add('animate__backOutLeft');
-                animatedElement.classList.remove('animate__rollIn');
+            else {
+                if (animatedElement.classList.contains('animate__rollIn')) {
+                    console.log('Elemento fuera de vista. Eliminando clase "visible".');
+                    animatedElement.classList.add('animate__backOutLeft');
+                    animatedElement.classList.remove('animate__rollIn');
+                }
             }
         }
     }
@@ -58,26 +60,59 @@ document.addEventListener('DOMContentLoaded', function () {
     checkVisibility(); // Verificar la visibilidad al cargar la página
 });
 document.addEventListener('DOMContentLoaded', function () {
-    const animatedElement = document.getElementById('anim-section2');
+    const animatedElements = document.getElementsByClassName('text left-animation');
 
     function checkVisibility() {
-        const rect = animatedElement.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        const margin = 100; // Ajusta este valor según sea necesario
+        for (let animatedElement of animatedElements){
+            console.log(animatedElement);
+            const rect = animatedElement.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            const margin = 100; // Ajusta este valor según sea necesario
 
-        // Verifica si el elemento está dentro de la ventana de visualización con un margen adicional
-        if (rect.top < windowHeight - margin && rect.bottom > margin) {
-            if (!animatedElement.classList.contains('animate__fadeInRight') && !animatedElement.classList.contains('circle visible')) {
-                console.log('Elemento visible. Añadiendo clase "visible".');
-                animatedElement.classList.remove('animate__fadeOutRight');
-                animatedElement.classList.add('animate__fadeInRight');
+            // Verifica si el elemento está dentro de la ventana de visualización con un margen adicional
+            if (rect.top < windowHeight - margin && rect.bottom > margin) {
+                if (!animatedElement.classList.contains('animate__fadeInLeft') && !animatedElement.classList.contains('circle visible')) {
+                    console.log('Elemento visible. Añadiendo clase "visible".');
+                    animatedElement.classList.remove('animate__fadeOutLeft');
+                    animatedElement.classList.add('animate__fadeInLeft');
+                }
+            }
+            else {
+                if (animatedElement.classList.contains('animate__fadeInLeft')) {
+                    console.log('Elemento fuera de vista. Eliminando clase "visible".');
+                    animatedElement.classList.add('animate__fadeOutLeft');
+                    animatedElement.classList.remove('animate__fadeInLeft');
+                }
             }
         }
-        else {
-            if (animatedElement.classList.contains('animate__fadeInRight')) {
-                console.log('Elemento fuera de vista. Eliminando clase "visible".');
-                animatedElement.classList.add('animate__fadeOutRight');
-                animatedElement.classList.remove('animate__fadeInRight');
+    }
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Verificar la visibilidad al cargar la página
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const animatedElements = document.getElementsByClassName('text right-animation');
+
+    function checkVisibility() {
+        for (let animatedElement of animatedElements){
+            console.log(animatedElement);
+            const rect = animatedElement.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            const margin = 100; // Ajusta este valor según sea necesario
+
+            // Verifica si el elemento está dentro de la ventana de visualización con un margen adicional
+            if (rect.top < windowHeight - margin && rect.bottom > margin) {
+                if (!animatedElement.classList.contains('animate__fadeInRight') && !animatedElement.classList.contains('circle visible')) {
+                    console.log('Elemento visible. Añadiendo clase "visible".');
+                    animatedElement.classList.remove('animate__fadeOutRight');
+                    animatedElement.classList.add('animate__fadeInRight');
+                }
+            }
+            else {
+                if (animatedElement.classList.contains('animate__fadeInRight')) {
+                    console.log('Elemento fuera de vista. Eliminando clase "visible".');
+                    animatedElement.classList.add('animate__fadeOutRight');
+                    animatedElement.classList.remove('animate__fadeInRight');
+                }
             }
         }
     }
