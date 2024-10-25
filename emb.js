@@ -119,3 +119,38 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', checkVisibility);
     checkVisibility(); // Verificar la visibilidad al cargar la página
 });
+
+document.querySelectorAll('.filter-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+        const teamMembers = document.querySelectorAll('.team-member');
+
+        teamMembers.forEach(member => {
+            if (category === 'all' || member.getAttribute('data-category') === category) {
+                member.style.display = 'block';
+            } else {
+                member.style.display = 'none';
+            }
+        });
+    });
+});
+document.querySelectorAll('.learn-more').forEach(button => {
+    button.addEventListener('click', function() {
+        const moreInfo = this.previousElementSibling;
+        if (moreInfo.style.display === "none" || moreInfo.style.display === "") {
+            moreInfo.style.display = "block";
+            this.textContent = "Leer menos";
+        } else {
+            moreInfo.style.display = "none";
+            this.textContent = "Leer más";
+        }
+    });
+});
+
+// Redirigir a página de inscripción u otra página
+document.querySelectorAll('.register-now').forEach(button => {
+    button.addEventListener('click', function() {
+        window.location.href = "https://ejemplo.com/gamejam-registro";
+    });
+});
+
