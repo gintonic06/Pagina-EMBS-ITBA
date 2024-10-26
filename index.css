@@ -355,6 +355,9 @@ body {
 }
 
 .team-member {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
     background-color: white;
     border-radius: 10px;
     margin: 15px;
@@ -399,6 +402,9 @@ body {
 }
 
 .event-card {
+    display: flex;
+    flex-direction: column; 
+    align-items: start;
     background-color: white;
     border-radius: 10px;
     margin: 15px;
@@ -416,7 +422,9 @@ body {
 
 .event-details {
     padding: 20px;
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column; 
+    align-items: start;
 }
 
 .event-details h3 {
@@ -428,8 +436,15 @@ body {
     color: #555;
     margin: 5px 0;
 }
-.event-details button{
-    margin-top: 15px;
+.button-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    width: 100%;
+    padding: 20px;
+}
+.button-container button{
+    width: 30%;
 }
 .learn-more, .register-now {
     padding: 10px 20px;
@@ -450,4 +465,19 @@ body {
     margin-top: 10px;
     color: #777;
     display: none;
+}
+.social-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+.social-links img{
+    height: 100%;
+    transition: 0.3s ease, transform 0.3s ease;
+}
+.social-links img:hover{
+    transform: scale(1.2);
+    
 }
