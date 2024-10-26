@@ -416,6 +416,7 @@ body {
 
 .event-details {
     padding: 20px;
+    flex-grow: 1;
 }
 
 .event-details h3 {
@@ -427,10 +428,13 @@ body {
     color: #555;
     margin: 5px 0;
 }
-
+.event-details button{
+    margin-top: 15px;
+}
 .learn-more, .register-now {
     padding: 10px 20px;
-    margin-top: 15px;
+    margin-top: 2%;
+    margin-bottom: 0%;
     border: none;
     background-color: #140589;
     color: white;
