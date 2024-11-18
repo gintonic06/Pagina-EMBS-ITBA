@@ -278,7 +278,7 @@ body {
         font-size: 3vw;
     }
     .text p {
-        font-size: 3vw;
+        font-size: 4vw;
         text-align: center;
         margin: 0; /* Elimina el margen por defecto del párrafo */
         color: #333;
@@ -497,7 +497,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 10%;
-    padding-left: 9%;
+    padding-left: 0%;
 }
 footer a, footer p {
     color: #fff;
