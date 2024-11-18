@@ -39,7 +39,6 @@ body {
     padding: 5%;
     margin-left: 10%;
 }
-
 .nav-links {
     list-style: none;
     display: flex;
@@ -481,3 +480,4 @@ body {
     transform: scale(1.2);
     
 }
+ 
